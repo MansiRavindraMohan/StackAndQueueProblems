@@ -13,6 +13,14 @@
             queue.Enqueue(30);
             queue.Enqueue(70);
             queue.Display();
+
+            Console.WriteLine("Dequeue");
+
+            queue.Dequeue();
+            queue.Dequeue();
+            queue.Dequeue();
+            queue.Display();
+
         }
     }
 }

@@ -33,6 +33,17 @@ namespace StackAndQueueProblems
             Console.WriteLine("{0} inserted into Queue", node.data);
         }
 
+        public void Dequeue()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Queue is empty");
+            }
+            Node temp = this.head;
+            this.head = this.head.next;
+            Console.WriteLine("Item removed is {0}", temp.data);
+        }
+
         public void Display()
         {
             Node temp = this.head;
@@ -46,6 +57,7 @@ namespace StackAndQueueProblems
                 Console.Write(temp.data + " ");
                 temp = temp.next;
             }
+            Console.WriteLine();
         }
     }
 }
