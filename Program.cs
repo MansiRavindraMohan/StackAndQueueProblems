@@ -6,20 +6,13 @@
         {
             //Console.WriteLine ("Welcome to Stack and queue prblems");
 
-            Console.WriteLine("Create Stack using Linked List");
+            Console.WriteLine("Create queue using Linked List");
 
-            StackUsingLinkedList stack = new StackUsingLinkedList();
-            stack.Push(70);
-            stack.Push(30);
-            stack.Push(56);
-            stack.Display();
-
-            Console.WriteLine("\n--------------------\n");
-
-            stack.Peek();
-            stack.Pop();
-            stack.IsEmpty();
-            stack.Display();
+            QueueUsingLinkedList queue = new QueueUsingLinkedList();
+            queue.Enqueue(56);
+            queue.Enqueue(30);
+            queue.Enqueue(70);
+            queue.Display();
         }
     }
 }

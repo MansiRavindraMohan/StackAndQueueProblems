@@ -7,60 +7,44 @@ using System.Xml.Linq;
 
 namespace StackAndQueueProblems
 {
-    public class StackUsingLinkedList
+    public class QueueUsingLinkedList
     {
-        private Node top;
-        public void Push(int value)
+        public Node head = null;
+
+        public void Enqueue(int data)
         {
-            Node node = new Node(value);
-            if (this.top == null)
-                node.next = null;
+            Node node = new Node(data);
+
+            if (this.head == null)
+            {
+                this.head = node;
+            }
             else
-                node.next = this.top;
-            this.top = node;
-            Console.WriteLine("{0} pushed to stack ", value);
+            {
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
+
+
+            }
+            Console.WriteLine("{0} inserted into Queue", node.data);
         }
+
         public void Display()
         {
-            Node temp = this.top;
+            Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("Queue is empty");
+                return;
+            }
             while (temp != null)
             {
                 Console.Write(temp.data + " ");
                 temp = temp.next;
-            }
-        }
-        public void Peek()
-        {
-            if (this.top == null)
-            {
-                Console.WriteLine("Stack is empty");
-                return;
-            }
-            else
-            {
-                Console.WriteLine("{0} is in the top of the stack ", this.top.data);
-            }
-        }
-        public void Pop()
-        {
-            if (this.top == null)
-            {
-                Console.WriteLine("Stack is empty, Deletion is not possible");
-                return;
-            }
-            else
-            {
-                Console.WriteLine("Value popped is {0} ", this.top.data);
-                this.top = this.top.next;
-            }
-        }
-
-        public void IsEmpty()
-        {
-            while (this.top != null)
-            {
-                Peek();
-                Pop();
             }
         }
     }
